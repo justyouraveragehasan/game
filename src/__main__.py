@@ -1,3 +1,5 @@
+import pygame
+
 def main() -> None:
     print("Hello World!")
     return None
