@@ -2,8 +2,8 @@ import pygame
 
 def game() -> None:
 
-    WIDTH = 360
-    HEIGHT = 480
+    WIDTH = 1920
+    HEIGHT = 1080
     FPS = 30
 
     pygame.init()
@@ -12,8 +12,11 @@ def game() -> None:
     clock = pygame.time.Clock()
     
     while True:
-        clock.tick()
-        screen.fill((0,0,0))
+        #set fps
+        clock.tick(FPS)
+
+        #draw screen
+        screen.fill((255,255,255))
         pygame.display.flip()
 
 
