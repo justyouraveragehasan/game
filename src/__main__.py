@@ -1,7 +1,13 @@
 import pygame
 
-def game() -> None:
+def draw_menu_screen() -> None:
+    pass
 
+def draw_game_screen() -> None:
+    pass
+
+def game() -> None:
+    #initial pygame init shit
     WIDTH = 1920
     HEIGHT = 1080
     FPS = 30
@@ -10,24 +16,28 @@ def game() -> None:
     screen = pygame.display.set_mode((WIDTH,HEIGHT))
     pygame.display.set_caption("Game")
     clock = pygame.time.Clock()
-    
-    while True:
+   
+    # Gameloop 
+    run = True
+    state = "Menu"
+
+    while run:
         #set fps
         clock.tick(FPS)
 
         #draw screen
-        screen.fill((255,255,255))
+        match state:
+            case "Menu":
+                draw_menu_screen()
+            case "Game":
+                draw_game_screen()
+            case _:
+                print("How did we get here?!")
+
         pygame.display.flip()
 
 
-
-def main() -> None:
-    print("Hello World!")
-    game()
-    return None
-
 if __name__ == "__main__":
-    main()
-
+    game()
 
 
