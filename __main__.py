@@ -15,7 +15,9 @@ def game() -> None:
    
     # Gameloop 
     run = True
-    state = "Game"
+
+    state = "Game" 
+    state = "Menu"
 
     while run:
         #set fps
@@ -24,9 +26,9 @@ def game() -> None:
         #draw screen
         match state:
             case "Menu":
-                graphics.main_menu(screen)
+                graphics.main_menu(screen,WIDTH,HEIGHT)
             case "Game":
-                graphics.game_screen(screen)
+                graphics.game_screen(screen,WIDTH,HEIGHT)
             case _:
                 print("How did we get here?!")
 
