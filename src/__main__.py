@@ -1,10 +1,6 @@
 import pygame
 
-def draw_menu_screen() -> None:
-    pass
-
-def draw_game_screen() -> None:
-    pass
+from core import graphics
 
 def game() -> None:
     #initial pygame init shit
@@ -19,7 +15,7 @@ def game() -> None:
    
     # Gameloop 
     run = True
-    state = "Menu"
+    state = "Game"
 
     while run:
         #set fps
@@ -28,9 +24,9 @@ def game() -> None:
         #draw screen
         match state:
             case "Menu":
-                draw_menu_screen()
+                graphics.main_menu(screen)
             case "Game":
-                draw_game_screen()
+                graphics.game_screen(screen)
             case _:
                 print("How did we get here?!")
 
