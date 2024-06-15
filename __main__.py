@@ -1,6 +1,9 @@
-import pygame
+import pygame, sys
 
 from core import graphics
+
+def main_menu() -> None:
+    pass 
 
 def game() -> None:
     #initial pygame init shit
@@ -26,11 +29,22 @@ def game() -> None:
         #draw screen
         match state:
             case "Menu":
-                graphics.main_menu(screen,WIDTH,HEIGHT)
+                graphics.draw_main_menu(screen,WIDTH,HEIGHT)
+                button1 = pygame.Rect(WIDTH/2 -200,HEIGHT/2,400,100)
+                pygame.draw.rect(screen,(255,0,255),button1)
             case "Game":
-                graphics.game_screen(screen,WIDTH,HEIGHT)
+                graphics.draw_game_screen(screen,WIDTH,HEIGHT)
             case _:
                 print("How did we get here?!")
+        
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if button1.collidepoint(event.pos):
+                    state = "Game"
 
         pygame.display.flip()
 
