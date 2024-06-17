@@ -25,7 +25,6 @@ def draw_game_screen(screen,WIDTH,HEIGHT) -> None:
     for y, row in enumerate(map_data):
             for x, tile in enumerate(row): #enumerate is op, if you use enumerate x is the count and tile is the value so its like for tile in row and for i in range 0,len(row) at the same time
                 if tile > 0:
-                    #pygame.draw.rect(display, (255, 255, 255), pygame.Rect(x * 10, y * 10, 10, 10), 1)
                     screen.blit(isoblock, (400 + x * 50 - y * 50, 100 + x * 25 + y * 25)) #x offset is 50, y offset is 25 
                     if tile > 1:
                         screen.blit(isoblock, (400 + x * 50 - y * 50, 100 + x * 25 + y * 25 -49)) #y offset is 49 pixels for second layer because the top layer would be covered
