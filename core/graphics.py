@@ -28,5 +28,6 @@ def draw_game_screen(screen,WIDTH,HEIGHT) -> None:
                     #pygame.draw.rect(display, (255, 255, 255), pygame.Rect(x * 10, y * 10, 10, 10), 1)
                     screen.blit(isoblock, (400 + x * 50 - y * 50, 100 + x * 25 + y * 25)) #x offset is 50, y offset is 25 
                     if tile > 1:
-                        screen.blit(isoblock, (400 + x * 50 - y * 50, 100 + x * 25 + y * 25 -49)) #y offset is 49 pixels for second layer because the top layer would be covered 
-
+                        screen.blit(isoblock, (400 + x * 50 - y * 50, 100 + x * 25 + y * 25 -49)) #y offset is 49 pixels for second layer because the top layer would be covered
+                    if tile > 2:
+                        screen.blit(isoblock, (400 + x * 50 - y * 50, 100 + x * 25 + y * 25 -49*2)) #y offset is 49*2 pixels for third layer because the top layer would be covered
